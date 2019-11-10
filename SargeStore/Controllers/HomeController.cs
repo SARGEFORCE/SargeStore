@@ -18,5 +18,10 @@ namespace SargeStore.Controllers
         {
             return Content(_Configuration["CustomData"]);
         }
+
+        public IActionResult ReadConfig()
+        {
+            return Content(_Configuration["CustomData"]);
+        }
     }
 }
