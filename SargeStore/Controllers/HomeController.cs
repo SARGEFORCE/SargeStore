@@ -14,10 +14,7 @@ namespace SargeStore.Controllers
         
         public HomeController(IConfiguration Configuration){ _Configuration = Configuration; }
 
-        public IActionResult Index()
-        {
-            return Content(_Configuration["CustomData"]);
-        }
+        public IActionResult Index(){ return View(); }
 
         public IActionResult ReadConfig()
         {
