@@ -11,14 +11,11 @@ namespace SargeStore.Controllers
     public class HomeController : Controller
     {
         private readonly IConfiguration _Configuration;
-        
-        public HomeController(IConfiguration Configuration){ _Configuration = Configuration; }
 
-        public IActionResult Index(){ return View(); }
+        public HomeController(IConfiguration Configuration) => _Configuration = Configuration;
 
-        public IActionResult ReadConfig()
-        {
-            return Content(_Configuration["CustomData"]);
-        }
+        public IActionResult Index() => View();
+
+        public IActionResult ReadConfig() => Content(_Configuration["CustomData"]);
     }
 }
