@@ -17,6 +17,7 @@ namespace SargeStore
             services.AddMvc();
         }
 
+
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
@@ -29,12 +30,16 @@ namespace SargeStore
             //    await context.Response.WriteAsync("Hello World!");
             //});
 
+            app.UseStaticFiles();
+            app.UseDefaultFiles();
+
             app.UseMvc(routes => 
             {
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
-            }); //app.UseMvcWithDefaultRoute(); //или можно так написать, что тоже самое
+            }); 
+            //app.UseMvcWithDefaultRoute(); //или можно так написать, что тоже самое
         }
     }
 }

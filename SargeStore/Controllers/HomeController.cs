@@ -16,6 +16,7 @@ namespace SargeStore.Controllers
         public HomeController(IConfiguration Configuration) => _Configuration = Configuration;
         public IActionResult Index() => View();
         public IActionResult ReadConfig() => Content(_Configuration["CustomData"]);
+
         public static readonly List<EmployeeView> __Employees = new List<EmployeeView>
         {
             new EmployeeView{Id = 1, LastName = "Иванов", FirstName = "Иван", Patronymic = "Иванович", Age = 35 },
