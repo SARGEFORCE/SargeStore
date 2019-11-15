@@ -15,10 +15,9 @@ namespace SargeStore.ViewModels
         public string FirstName { get; set; }
         [Display(Name = "Соурнейм")]
         public string LastName { get; set; }
-        [Display(Name = "Патрономик")]
+        [Display(Name = "ПатронОмик")]
         public string Patronymic { get; set; }
         [Display(Name = "Старый стал?")]
         public int Age { get; set; }
-
     }
 }
