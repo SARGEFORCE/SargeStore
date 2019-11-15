@@ -23,6 +23,7 @@ namespace SargeStore
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseBrowserLink();
             }
 
             //app.Run(async (context) =>

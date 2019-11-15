@@ -1,0 +1,36 @@
+﻿@model IEnumerable<SargeStore.ViewModels.EmployeeView>
+
+@{ 
+    ViewBag.Title = "тОблицо Сотрудников №;%2 кк";
+}
+
+<h3>@ViewBag.Title</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Ойдишнег</th>
+            <th>Соурнейм</th>
+            <th>ФёстнЕйм</th>
+            <th>Патронумик</th>
+            <th>Древний?!</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var emloyee in Model)
+        {
+            <tr>
+                <td>@emloyee.Id</td>
+                <td>@emloyee.Patronymic</td>
+                <td>@emloyee.FirstName</td>
+                <td><a asp-action="Details" asp-route-Id="@emloyee.Id">
+                    @emloyee.LastName
+                    </a>
+                </td>
+                <td>@emloyee.Age</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
