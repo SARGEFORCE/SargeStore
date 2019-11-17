@@ -9,13 +9,7 @@ namespace SargeStore.Controllers
 {
     public class EmployeesController : Controller
     {
-        public static readonly List<EmployeeView> __Employees = new List<EmployeeView>
-        {
-            new EmployeeView{Id = 1, LastName = "Иванов", FirstName = "Иван", Patronymic = "Иванович", Age = 35 },
-            new EmployeeView{Id = 2, LastName = "Петров", FirstName = "Перт", Patronymic = "Петрович", Age = 43 },
-            new EmployeeView{Id = 3, LastName = "Козлов", FirstName = "Козлик", Patronymic = "Сидорович", Age = 25 },
-
-        };
+        
 
         public IActionResult Index()
         {
