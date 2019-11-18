@@ -9,41 +9,40 @@ namespace SargeStore.Infrastructure.Services
 {
     public class InMemoryEmployeesData : IEmployeesData
     {
-        public static readonly List<EmployeeView> __Employees = new List<EmployeeView>
+        public readonly List<EmployeeView> _Employees = new List<EmployeeView>
         {
             new EmployeeView{Id = 1, LastName = "Иванов", FirstName = "Иван", Patronymic = "Иванович", Age = 35 },
             new EmployeeView{Id = 2, LastName = "Петров", FirstName = "Перт", Patronymic = "Петрович", Age = 43 },
             new EmployeeView{Id = 3, LastName = "Козлов", FirstName = "Козлик", Patronymic = "Сидорович", Age = 25 },
         };
 
+        public IEnumerable<EmployeeView> GetAll() => _Employees;
+
+        public EmployeeView GetById(int id) => _Employees.FirstOrDefault(e => e.Id == id);
+
         public void Add(EmployeeView Employee)
         {
-            throw new NotImplementedException();
+            if (Employee is null)
+                throw new ArgumentNullException(nameof(Employee));
+            Employee.Id = _Employees.Count == 0 ? 1 : _Employees.Max(e => e.Id) + 1;
+            _Employees.Add(Employee);
         }
-
-        public void Delete(int id)
-        {
-            throw new NotImplementedException();
-        }
-
         public void Edit(int id, EmployeeView Employee)
         {
-            throw new NotImplementedException();
-        }
+            var db_emloyee = GetById(id);
+            if (db_emloyee is null) return;
 
-        public IEnumerable<EmployeeView> GetAll()
-        {
-            throw new NotImplementedException();
+            db_emloyee.FirstName = Employee.FirstName;
+            db_emloyee.LastName = Employee.LastName;
+            db_emloyee.Patronymic = Employee.Patronymic;
+            db_emloyee.Age = Employee.Age;
         }
-
-        public EmployeeView GetById(int id)
+        public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            var db_emloyee = GetById(id);
+            if (db_emloyee is null) return false;
+            return _Employees.Remove(db_emloyee);
         }
-
-        public void SaveChanges()
-        {
-            throw new NotImplementedException();
-        }
+        public void SaveChanges() { }
     }
 }

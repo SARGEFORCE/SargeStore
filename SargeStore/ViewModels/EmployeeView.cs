@@ -11,13 +11,13 @@ namespace SargeStore.ViewModels
     {
         [HiddenInput(DisplayValue = false)]
         public int Id { get; set; }
-        [Display(Name = "ФёстНейм")]
+        [Display(Name = "Имя")]
         public string FirstName { get; set; }
-        [Display(Name = "Соурнейм")]
+        [Display(Name = "Фамилия")]
         public string LastName { get; set; }
-        [Display(Name = "ПатронОмик")]
+        [Display(Name = "Отчество")]
         public string Patronymic { get; set; }
-        [Display(Name = "Старый стал?")]
+        [Display(Name = "Возраст")]
         public int Age { get; set; }
     }
 }

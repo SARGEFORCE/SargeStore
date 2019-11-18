@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using SargeStore.Infrastructure.Conventions.Interfaces;
+using SargeStore.Infrastructure.Services;
 
 namespace SargeStore
 {
@@ -14,7 +16,13 @@ namespace SargeStore
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddSingleton<IEmployeesData, InMemoryEmployeesData>();
+
+            services.AddMvc(
+                opt=> 
+                {
+                    //opt.Conventions.Add(new CustomControllerConvention());
+                });
         }
 
 

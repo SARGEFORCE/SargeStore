@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SargeStore.Infrastructure.Conventions.Interfaces
 {
-    interface IEmployeesData
+    public interface IEmployeesData
     {
         /// <summary>
         /// Получить всех сотрудников
@@ -37,7 +37,7 @@ namespace SargeStore.Infrastructure.Conventions.Interfaces
         /// Удаление сотрудника с указанным идентификатором
         /// </summary>
         /// <param name="id">Идентификатор удаляемого сотрудника</param>
-        void Delete(int id);
+        bool Delete(int id);
 
         /// <summary>
         /// Сохранение изменений
