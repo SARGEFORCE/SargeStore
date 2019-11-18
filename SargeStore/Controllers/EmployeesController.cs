@@ -50,9 +50,30 @@ namespace SargeStore.Controllers
 
             return View(nameof(Details), employee);
         } 
-        public IActionResult Edit (int id, [FromBody] EmployeeView Employee)
+        public IActionResult Edit (int Id)
         {
-            return RedirectToAction(nameof(Index));
+            if (Id < 0)
+                return BadRequest();
+            var employee = _EmployeesData.GetById((int)Id);
+            if (employee is null)
+                return NotFound();
+
+            return View(employee);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(EmployeeView Employee)
+        {
+            if (Employee is null)
+                throw new ArgumentNullException(nameof(Employee));
+
+            if (!ModelState.IsValid)
+                View(Employee);
+            var id = Employee.Id;
+            _EmployeesData.Edit(id, Employee);
+            _EmployeesData.SaveChanges();
+
+            return RedirectToAction("Index");
         }
     }
 }
