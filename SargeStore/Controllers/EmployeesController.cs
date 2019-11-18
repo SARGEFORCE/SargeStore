@@ -49,9 +49,26 @@ namespace SargeStore.Controllers
                 return NotFound();
 
             return View(nameof(Details), employee);
-        } 
-        public IActionResult Edit (int Id)
+        }
+
+        public IActionResult Create() => View(new EmployeeView());
+
+        [HttpPost]
+        public IActionResult Create(EmployeeView NewEmployee)
         {
+            if (!ModelState.IsValid)
+                return View(NewEmployee);
+
+            _EmployeesData.Add(NewEmployee);
+            _EmployeesData.SaveChanges();
+
+            return RedirectToAction("Details", new { NewEmployee.Id });
+        } 
+
+        public IActionResult Edit (int? Id)
+        {
+            if (Id is null) return View(new EmployeeView()); //Для создания сотрудника
+
             if (Id < 0)
                 return BadRequest();
             var employee = _EmployeesData.GetById((int)Id);
@@ -70,7 +87,13 @@ namespace SargeStore.Controllers
             if (!ModelState.IsValid)
                 View(Employee);
             var id = Employee.Id;
-            _EmployeesData.Edit(id, Employee);
+            if(id == 0)
+            {
+                _EmployeesData.Add(Employee);
+            }
+            else
+                _EmployeesData.Edit(id, Employee);
+
             _EmployeesData.SaveChanges();
 
             return RedirectToAction("Index");
