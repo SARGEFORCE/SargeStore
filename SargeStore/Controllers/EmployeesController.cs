@@ -98,5 +98,16 @@ namespace SargeStore.Controllers
 
             return RedirectToAction("Index");
         }
+
+        public IActionResult Delete(int id)
+        {
+            var employee = _EmployeesData.GetById(id);
+            if (employee is null)
+                return NotFound();
+            return View(employee);
+
+            //_EmployeesData.Delete(id);
+            //return RedirectToAction("Index");
+        }
     }
 }
