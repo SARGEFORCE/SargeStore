@@ -109,5 +109,12 @@ namespace SargeStore.Controllers
             //_EmployeesData.Delete(id);
             //return RedirectToAction("Index");
         }
+
+        [HttpPost]
+        public IActionResult DeleteConfirmed(int Id)
+        {
+            _EmployeesData.Delete(Id);
+            return RedirectToAction("Index");
+        }
     }
 }

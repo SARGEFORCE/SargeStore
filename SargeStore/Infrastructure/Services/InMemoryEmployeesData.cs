@@ -11,9 +11,17 @@ namespace SargeStore.Infrastructure.Services
     {
         public readonly List<EmployeeView> _Employees = new List<EmployeeView>
         {
-            new EmployeeView{Id = 1, LastName = "Иванов", FirstName = "Иван", Patronymic = "Иванович", Age = 35 },
-            new EmployeeView{Id = 2, LastName = "Петров", FirstName = "Перт", Patronymic = "Петрович", Age = 43 },
-            new EmployeeView{Id = 3, LastName = "Козлов", FirstName = "Козлик", Patronymic = "Сидорович", Age = 25 },
+            new EmployeeView{Id = 1, LastName = "Иванов",    FirstName = "Гуглан",   Patronymic = "Яндексович",  Age = 35 },
+            new EmployeeView{Id = 2, LastName = "Петров",    FirstName = "Перт",     Patronymic = "Петрович",    Age = 43 },
+            new EmployeeView{Id = 3, LastName = "Козлов",    FirstName = "Козлик",   Patronymic = "Сидорович",   Age = 25 },
+            new EmployeeView{Id = 4, LastName = "Икодретов", FirstName = "Кобзырь",  Patronymic = "Конанович",   Age = 54 },
+            new EmployeeView{Id = 5, LastName = "Каракумов", FirstName = "Ирбис",    Patronymic = "Умурзакович", Age = 34 },
+            new EmployeeView{Id = 6, LastName = "Федоретов", FirstName = "Палай",    Patronymic = "Фёдорович",   Age = 37 },
+            new EmployeeView{Id = 7, LastName = "Куковиров", FirstName = "Бурат",    Patronymic = "Дубанович",   Age = 45 },
+            new EmployeeView{Id = 8, LastName = "Частеков",  FirstName = "Тупак",    Patronymic = "Зависонович", Age = 99 },
+            new EmployeeView{Id = 9, LastName = "Узумаков",  FirstName = "Наруто",   Patronymic = "Минатович",   Age = 29 },
+            new EmployeeView{Id = 10,LastName = "Харунова",  FirstName = "Сакура",   Patronymic = "Мибуковна",   Age = 29 },
+            new EmployeeView{Id = 11,LastName = "Базуков",   FirstName = "Ногато",   Patronymic = "Руканович",   Age = 58 },
         };
 
         public IEnumerable<EmployeeView> GetAll() => _Employees;
