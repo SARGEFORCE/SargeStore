@@ -84,6 +84,11 @@ namespace SargeStore.Controllers
             if (Employee is null)
                 throw new ArgumentNullException(nameof(Employee));
 
+            if(Employee.Age < 18)
+            {
+                ModelState.AddModelError(nameof(EmployeeView.Age), "Возраст не может быть меньше 18 лет");
+            }
+
             if (!ModelState.IsValid)
                 View(Employee);
 

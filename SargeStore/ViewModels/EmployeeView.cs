@@ -15,6 +15,7 @@ namespace SargeStore.ViewModels
         [Display(Name = "Имя")]
         [Required(ErrorMessage = "Имя является обязательным", AllowEmptyStrings = false)]
         [StringLength(20, MinimumLength = 2, ErrorMessage = "Длина имени должна находиться в пределах от 2 до 20 символов")]
+        [RegularExpression(@"(?:[А-ЯЁ][а-яё]+)|(?:[A-Z][a-z]+)", ErrorMessage ="Странное имя")]
         public string FirstName { get; set; }
 
         [Display(Name = "Фамилия")]
