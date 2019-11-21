@@ -86,6 +86,7 @@ namespace SargeStore.Controllers
 
             if (!ModelState.IsValid)
                 View(Employee);
+
             var id = Employee.Id;
             if(id == 0)
             {

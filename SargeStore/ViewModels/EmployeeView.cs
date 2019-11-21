@@ -11,13 +11,21 @@ namespace SargeStore.ViewModels
     {
         [HiddenInput(DisplayValue = false)]
         public int Id { get; set; }
+
         [Display(Name = "Имя")]
+        [Required(ErrorMessage = "Имя является обязательным", AllowEmptyStrings = false)]
+        [StringLength(20, MinimumLength = 2, ErrorMessage = "Длина имени должна находиться в пределах от 2 до 20 символов")]
         public string FirstName { get; set; }
+
         [Display(Name = "Фамилия")]
+        [Required(ErrorMessage = "Фамилия является обязательной", AllowEmptyStrings = false)]
+        [StringLength(20, MinimumLength = 2, ErrorMessage = "Длина фамилии должна находиться в пределах от 2 до 20 символов")]
         public string LastName { get; set; }
+
         [Display(Name = "Отчество")]
         public string Patronymic { get; set; }
         [Display(Name = "Возраст")]
+        [Required(ErrorMessage = "Не указан возраст!")]
         public int Age { get; set; }
     }
 }
