@@ -7,6 +7,6 @@ namespace SargeStoreDomain.Entities
     public class Section : NamedEntity, IOrderedEntity
     {
         public int Order { get; set; }
-        int? ParentId { get; set; }
+        public int? ParentId { get; set; }
     }
 }
