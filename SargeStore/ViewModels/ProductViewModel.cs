@@ -1,10 +1,7 @@
 ﻿
-using System;
-using System.Linq;
-using System.Threading.Tasks;
 using SargeStoreDomain.Entities.Base.Interfaces;
 
-namespace SargeStoreDomain.ViewModels
+namespace SargeStore.ViewModels
 {
     public class ProductViewModel : INamedEntity, IOrderedEntity
     {

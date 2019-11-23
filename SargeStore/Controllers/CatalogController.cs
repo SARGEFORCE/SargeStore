@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using SargeStoreDomain.Entities;
 using SargeStore.Infrastructure.Interfaces;
-using SargeStoreDomain.ViewModels;
+using SargeStore.ViewModels;
 
 namespace SargeStore.Controllers
 {

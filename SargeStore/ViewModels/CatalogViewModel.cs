@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace SargeStoreDomain.ViewModels
+namespace SargeStore.ViewModels
 {
     public class CatalogViewModel
     {
