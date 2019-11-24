@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using SargeStore.Data;
 using SargeStore.Infrastructure.Conventions.Interfaces;
 using SargeStore.Infrastructure.Interfaces;
 using SargeStore.Infrastructure.Services;
@@ -19,7 +20,9 @@ namespace SargeStore
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<SargeStoreDB>(opt => opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<SargeStoreDB>(opt => 
+                opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddTransient<SargeStoreContexInitializer>();
             services.AddSingleton<IEmployeesData, InMemoryEmployeesData>();
             services.AddScoped<IProductData, InMemoryProductData>();
             services.AddSession();
@@ -28,8 +31,10 @@ namespace SargeStore
         }
 
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, SargeStoreContexInitializer db)
         {
+            db.InitializeAsync().Wait();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
