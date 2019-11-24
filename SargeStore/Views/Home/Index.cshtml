@@ -1,16 +1,27 @@
-﻿<!DOCTYPE html>
+﻿
+@{ 
+    Layout = "_LayoutBase";
+    ViewData["Title"] = "Главная страница";
+}
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <h1>Первое представление</h1>
-    <hr/>
-    <p>Здорова мир! 678 </p>
-    <p>
-        <a href="/home/readconfig">Config?</a>
-    </p>
-</body>
-</html>
+<partial name="Partial/_Slider"/>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <partial name="Partial/_LeftSideBar"/>
+                </div>
+
+                <div class="col-sm-9 padding-right">
+                    
+                    <partial name="Partial/_FeaturesItems"/>
+
+                    <partial name="Partial/_CategoryTab" />
+
+                    <partial name="Partial/_RecommendedItems" />
+
+                </div>
+            </div>
+        </div>
+    </section>
