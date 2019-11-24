@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using DataAccessLayer.Context;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SargeStore.Infrastructure.Conventions.Interfaces;
@@ -17,6 +19,7 @@ namespace SargeStore
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<SargeStoreDB>(opt => opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddSingleton<IEmployeesData, InMemoryEmployeesData>();
             services.AddScoped<IProductData, InMemoryProductData>();
             services.AddSession();
