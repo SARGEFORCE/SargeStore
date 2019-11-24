@@ -10,7 +10,7 @@ namespace SargeStore.ViewComponents
     {
         private readonly IProductData _ProductData;
         public SectionsViewComponent(IProductData ProductData) => _ProductData = ProductData;
-        public IViewComponentResult Invoke() => View();
+        public IViewComponentResult Invoke() => View(GetSections());
         //public async Task<IViewComponentResult> InvokeAsync() => View();
         private IEnumerable<SectionViewModel> GetSections()
         {
