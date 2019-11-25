@@ -24,7 +24,9 @@ namespace SargeStore
                 opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddTransient<SargeStoreContexInitializer>();
             services.AddSingleton<IEmployeesData, InMemoryEmployeesData>();
-            services.AddScoped<IProductData, InMemoryProductData>();
+            //services.AddScoped<IProductData, InMemoryProductData>();
+            services.AddScoped<IProductData, SqlProductData>();
+
             services.AddSession();
             services.AddMvc();
 
