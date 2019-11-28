@@ -1,7 +1,6 @@
 ﻿using DataAccessLayer.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -52,7 +51,7 @@ namespace SargeStore
 
             services.ConfigureApplicationCookie(opt =>
             {
-                var polgoda = TimeSpan.FromDays(150);
+                var polgoda = TimeSpan.FromDays(182);
                 opt.Cookie.Name = "SargeStore-Identity";
                 opt.Cookie.HttpOnly = true;
                 opt.Cookie.Expiration = polgoda;
