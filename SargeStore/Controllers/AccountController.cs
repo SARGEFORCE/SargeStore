@@ -28,7 +28,11 @@ namespace SargeStore.Controllers
         public async Task<IActionResult> Register(RegisterUserViewModel Model)
         {
             if (!ModelState.IsValid)
+            {
+                _Logger.LogWarning("Регистрация нового пользователя {0} прошла с ошибкой", Model.UserName);
                 return View(Model);
+            }
+
             var user = new User
             {
                 UserName = Model.UserName
