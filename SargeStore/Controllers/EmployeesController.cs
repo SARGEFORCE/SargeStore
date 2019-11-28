@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using SargeStore.ViewModels;
 using SargeStore.Infrastructure.Services;
 using SargeStore.Infrastructure.Conventions.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 
 namespace SargeStore.Controllers
 {
+    [Authorize]
     public class EmployeesController : Controller
     {
         private readonly IEmployeesData _EmployeesData;
