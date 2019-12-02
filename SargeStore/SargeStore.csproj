@@ -24,7 +24,6 @@
 
   <ItemGroup>
     <Folder Include="Infrastructure\Conventions\" />
-    <Folder Include="Models\" />
   </ItemGroup>
 
   <ItemGroup>
