@@ -1,16 +1,14 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SargeStoreDomain.Entities.Identity
 {
-    public class User : IdentityUser
+    public class Role : IdentityRole
     {
         public const string Administrator = "Administrator";
-        
-        public const string AdminPasswordDefault = "AdminPassword";
+
+        public const string User = "User";
 
         public string Description { get; set; }
+
     }
 }
