@@ -12,6 +12,8 @@ namespace SargeStore.Infrastructure.Services
     {
         public IEnumerable<Brand> GetBrands() => TestData.Brands;
 
+        public Product GetProductById(int id) => TestData.Products.FirstOrDefault(p => p.Id == id);
+
         public IEnumerable<Product> GetProducts(ProductFilter Filter = null)
         {
             var query = TestData.Products;
