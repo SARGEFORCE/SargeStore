@@ -1,7 +1,8 @@
 ﻿using DataAccessLayer.Context;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using SargeStoreDomain.Entities.Identity;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -10,7 +11,15 @@ namespace SargeStore.Data
     public class SargeStoreContexInitializer
     {
         private readonly SargeStoreDB _db;
-        public SargeStoreContexInitializer(SargeStoreDB db) => _db = db;
+        private readonly UserManager<User> _UserManager;
+        private readonly RoleManager<Role> _RoleManager;
+
+        public SargeStoreContexInitializer(SargeStoreDB db, UserManager<User> UserManager, RoleManager<Role> RoleManager)
+        {
+            _db = db;
+            _UserManager = UserManager;
+            _RoleManager = RoleManager;
+        }
 
         public async Task InitializeAsync()
         {
@@ -23,6 +32,8 @@ namespace SargeStore.Data
             //await _db.Database.EnsureCreatedAsync();
 
             await db.MigrateAsync(); //Автоматическое создание и миграция до последней версии
+            
+            await IdentityInitializeAsync();
 
             if (await _db.Products.AnyAsync()) return;
 
@@ -54,6 +65,29 @@ namespace SargeStore.Data
                 await _db.SaveChangesAsync();
                 await db.ExecuteSqlCommandAsync("SET IDENTITY_INSERT [dbo].[Products] OFF");
                 transaction.Commit();
+            }
+        }
+        private async Task IdentityInitializeAsync()
+        {
+            if(!await _RoleManager.RoleExistsAsync(Role.Administrator))
+                await _RoleManager.CreateAsync(new Role { Name = Role.Administrator });
+
+            if (!await _RoleManager.RoleExistsAsync(Role.User))
+                await _RoleManager.CreateAsync(new Role { Name = Role.User });
+
+            if (await _UserManager.FindByNameAsync(User.Administrator) is null)
+            {
+                var admin = new User
+                {
+                    UserName = User.Administrator
+                };
+                var creation_result = await _UserManager.CreateAsync(admin, User.AdminPasswordDefault);
+
+                if (creation_result.Succeeded)
+                    await _UserManager.AddToRoleAsync(admin, Role.Administrator);
+                else
+                    throw new InvalidOperationException($"Ошибка при создании админа в БД " +
+                        $"{string.Join(", ", creation_result.Errors.Select(e => e.Description))}");
             }
         }
     }

@@ -7,6 +7,7 @@ using SargeStore.ViewModels;
 using SargeStore.Infrastructure.Services;
 using SargeStore.Infrastructure.Conventions.Interfaces;
 using Microsoft.AspNetCore.Authorization;
+using SargeStoreDomain.Entities.Identity;
 
 namespace SargeStore.Controllers
 {
@@ -67,6 +68,7 @@ namespace SargeStore.Controllers
             return RedirectToAction("Details", new { NewEmployee.Id });
         } 
 
+        [Authorize(Roles = Role.Administrator)]
         public IActionResult Edit (int? Id)
         {
             if (Id is null) return View(new EmployeeView()); //Для создания сотрудника
@@ -81,6 +83,7 @@ namespace SargeStore.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = Role.Administrator)]
         public IActionResult Edit(EmployeeView Employee)
         {
             if (Employee is null)
@@ -107,6 +110,7 @@ namespace SargeStore.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize(Roles = Role.Administrator)]
         public IActionResult Delete(int id)
         {
             var employee = _EmployeesData.GetById(id);
@@ -119,6 +123,7 @@ namespace SargeStore.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = Role.Administrator)]
         public IActionResult DeleteConfirmed(int Id)
         {
             _EmployeesData.Delete(Id);
