@@ -1,60 +1,15 @@
-﻿<section class="sec-logo">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-2">
-                <img src="~/admin/img/logo-vrinda.png" alt="Админка" />
-            </div>
-            <div class="col-md-7">
-            </div>
-            <div class="col-md-3 quick-info">
-                Support :<i> info@sargestore.com </i> <br />
-                Call : <i>"Казахский_iPhone"</i>
-            </div>
-        </div>
-    </div>
-</section>
-<!--LOGO SECTION END-->
-<section class="sec-menu">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <span class="menu-open-icon">  <i class="fa fa-bars pull-left fa-2x b-clr"></i> </span>  <i class="pull-right"> Добро пожаловать в админку! </i>
-            </div>
-        </div>
-    </div>
-</section>
-<div id="side-menu">
-
-    <ul>
-        <li style="border-bottom:0px;">
-            <a href="#" title="close"> <i class="fa fa-close fa-2x menu-close-icon b-clr"></i></a>
-        </li>
-        <li>
-            <a asp-area = "Admin" asp-controller = "Home" asp-action="Index" title="Дэшборд"> <i class="fa fa-home fa-2x "></i> </a>
-        </li>
-        <li>
-            <a href="ui.html" title="UI Elements"> <i class="fa fa-plug fa-2x "></i>  </a>
-        </li>
-        <li>
-            <a href="forms.html" title="Forms"><i class="fa fa-rocket fa-2x "></i>  </a>
-        </li>
-        <li>
-            <a asp-area = "" asp-controller = "Home" asp-action="Index" title="Покинуть область администрирования"> <i class="fa fa-dashboard fa-2x"></i>  </a>
-        </li>
-
-    </ul>
-
-</div>
-<!--MENU SECTION END-->
+﻿@{
+    ViewData["Title"] = "Дэшборд";
+    ViewData["Title2"] = "Добро пожаловать!";
+}
 <div class="content-wrapper">
     <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
                 <h4 class="header-line">DASHBOARD</h4>
-
             </div>
-
         </div>
+
         <div class="row " style="padding-bottom:40px;">
             <div class="col-md-2 col-sm-2 col-xs-6">
                 <div class="text-center">
