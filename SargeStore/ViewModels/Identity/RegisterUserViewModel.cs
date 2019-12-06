@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -11,7 +10,6 @@ namespace SargeStore.ViewModels.Identity
     {
         [Required]
         [MaxLength(256)]
-        [Remote("IsNameFree", "Account", ErrorMessage = "Пользователь с таким именем уже существует")]
         [Display(Name = "Имя пользователя")]
         public string UserName { get; set; }
 
