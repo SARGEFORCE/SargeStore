@@ -15,7 +15,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLayer", "Services
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SargeStore", "UI\SargeStore\SargeStore.csproj", "{C07E3AB5-6E41-475B-B48E-72EE717C1BF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SargeStore.ServiceHosting", "Services\SargeStore.ServiceHosting\SargeStore.ServiceHosting.csproj", "{4CF5C0FD-6A28-44B3-96C1-AC4E8FFA2868}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SargeStore.ServiceHosting", "Services\SargeStore.ServiceHosting\SargeStore.ServiceHosting.csproj", "{4CF5C0FD-6A28-44B3-96C1-AC4E8FFA2868}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SargeStore.Interfaces", "Services\SargeStore.Interfaces\SargeStore.Interfaces.csproj", "{3A451511-531C-4823-901D-3E828F98F77B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SargeStore.Services", "Services\SargeStore.Services\SargeStore.Services.csproj", "{CC03841B-4B44-476E-A2EA-45D680DBC31A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{4CF5C0FD-6A28-44B3-96C1-AC4E8FFA2868}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4CF5C0FD-6A28-44B3-96C1-AC4E8FFA2868}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4CF5C0FD-6A28-44B3-96C1-AC4E8FFA2868}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A451511-531C-4823-901D-3E828F98F77B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A451511-531C-4823-901D-3E828F98F77B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A451511-531C-4823-901D-3E828F98F77B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A451511-531C-4823-901D-3E828F98F77B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC03841B-4B44-476E-A2EA-45D680DBC31A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC03841B-4B44-476E-A2EA-45D680DBC31A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC03841B-4B44-476E-A2EA-45D680DBC31A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC03841B-4B44-476E-A2EA-45D680DBC31A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +60,8 @@ Global
 		{C9D0ABB5-6756-46AF-AAFF-A12285035122} = {CB27BF10-025B-455D-92B8-4D9A0F1F1C9B}
 		{C07E3AB5-6E41-475B-B48E-72EE717C1BF0} = {5BB666DE-FCE7-4E75-8E1C-DEB96D69375C}
 		{4CF5C0FD-6A28-44B3-96C1-AC4E8FFA2868} = {CB27BF10-025B-455D-92B8-4D9A0F1F1C9B}
+		{3A451511-531C-4823-901D-3E828F98F77B} = {CB27BF10-025B-455D-92B8-4D9A0F1F1C9B}
+		{CC03841B-4B44-476E-A2EA-45D680DBC31A} = {CB27BF10-025B-455D-92B8-4D9A0F1F1C9B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B8C93FB1-6DA8-487E-9AB9-21442C2F25F2}

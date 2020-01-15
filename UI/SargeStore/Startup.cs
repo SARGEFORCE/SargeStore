@@ -5,10 +5,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using SargeStore.Data;
-using SargeStore.Infrastructure.Conventions.Interfaces;
-using SargeStore.Infrastructure.Interfaces;
-using SargeStore.Infrastructure.Services;
+using SargeStore.Interfaces.Services;
+using SargeStore.Services.Database;
+using SargeStore.Services.FProduct;
 using SargeStoreDomain.Entities.Identity;
 using System;
 

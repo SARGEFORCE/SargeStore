@@ -1,8 +1,8 @@
 ﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using SargeStoreDomain.Entities;
-using SargeStore.Infrastructure.Interfaces;
-using SargeStore.ViewModels;
+using SargeStoreDomain.ViewModels;
+using SargeStore.Interfaces.Services;
 
 namespace SargeStore.Controllers
 {

@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using SargeStore.ViewModels;
-using SargeStore.Infrastructure.Services;
-using SargeStore.Infrastructure.Conventions.Interfaces;
+using SargeStoreDomain.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using SargeStoreDomain.Entities.Identity;
+using SargeStore.Interfaces.Services;
 
 namespace SargeStore.Controllers
 {

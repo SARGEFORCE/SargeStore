@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using SargeStore.Infrastructure.Interfaces;
+using SargeStore.Interfaces.Services;
 using SargeStoreDomain.Entities.Identity;
 
 namespace SargeStore.Areas.Admin.Controllers

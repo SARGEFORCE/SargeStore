@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using SargeStore.Infrastructure.Interfaces;
-using SargeStore.ViewModels;
+using SargeStore.Interfaces.Services;
+using SargeStoreDomain.ViewModels;
 using System.Linq;
 
 namespace SargeStore.Controllers

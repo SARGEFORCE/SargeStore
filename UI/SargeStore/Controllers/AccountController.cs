@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using SargeStore.ViewModels.Identity;
+using SargeStoreDomain.ViewModels.Identity;
 using SargeStoreDomain.Entities.Identity;
 
 namespace SargeStore.Controllers
