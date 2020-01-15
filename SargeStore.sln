@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLayer", "Services
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SargeStore", "UI\SargeStore\SargeStore.csproj", "{C07E3AB5-6E41-475B-B48E-72EE717C1BF0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SargeStore.ServiceHosting", "Services\SargeStore.ServiceHosting\SargeStore.ServiceHosting.csproj", "{4CF5C0FD-6A28-44B3-96C1-AC4E8FFA2868}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{C07E3AB5-6E41-475B-B48E-72EE717C1BF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C07E3AB5-6E41-475B-B48E-72EE717C1BF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C07E3AB5-6E41-475B-B48E-72EE717C1BF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CF5C0FD-6A28-44B3-96C1-AC4E8FFA2868}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CF5C0FD-6A28-44B3-96C1-AC4E8FFA2868}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CF5C0FD-6A28-44B3-96C1-AC4E8FFA2868}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CF5C0FD-6A28-44B3-96C1-AC4E8FFA2868}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,6 +47,7 @@ Global
 		{2C15A605-39B9-436F-946B-25C2288059CF} = {7A4925DD-B561-4D52-8AC5-2AE911340281}
 		{C9D0ABB5-6756-46AF-AAFF-A12285035122} = {CB27BF10-025B-455D-92B8-4D9A0F1F1C9B}
 		{C07E3AB5-6E41-475B-B48E-72EE717C1BF0} = {5BB666DE-FCE7-4E75-8E1C-DEB96D69375C}
+		{4CF5C0FD-6A28-44B3-96C1-AC4E8FFA2868} = {CB27BF10-025B-455D-92B8-4D9A0F1F1C9B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B8C93FB1-6DA8-487E-9AB9-21442C2F25F2}
