@@ -6,7 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace SargeStore.ServiceHosting.Controllers
 {
-    [Route("api/[controller]")]
+    //[Route("api/[controller]")]
+    [Route("api/Values")]
     [ApiController]
     public class ValuesController : ControllerBase
     {

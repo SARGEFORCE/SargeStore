@@ -31,6 +31,8 @@ namespace SargeStore.Clients.Base
         {
             _Disposed = true;
             if (!Disposing || _Disposed) return;
+
+            _Client.Dispose();
         }
     }
 }
