@@ -5,12 +5,11 @@ using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace SargeStore.Clients.Values
 {
-    class ValuesClient : BaseClient, IValuesService
+    public class ValuesClient : BaseClient, IValuesService
     {
         public ValuesClient(IConfiguration config)
             : base(config, "api/values")
@@ -37,37 +36,31 @@ namespace SargeStore.Clients.Values
 
             return string.Empty;
         }
-        public Uri Post(string value)
+        public Uri Post(string value) => PostAsync(value).Result;
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        /// <exception cref="HttpRequestException">Если получен некорректный статусный код</exception>
+        public async Task<Uri> PostAsync(string value)
         {
-            throw new NotImplementedException();
+            var response = await _Client.PostAsJsonAsync($"{_ServiceAddress}/post", value);
+            response.EnsureSuccessStatusCode();
+            return response.Headers.Location;
         }
 
-        public Task<Uri> PostAsync(string value)
+        public HttpStatusCode Delete(int id) => DeleteAsync(id).Result;
+
+        public async Task<HttpStatusCode> DeleteAsync(int id) =>
+            (await _Client.DeleteAsync($"{_ServiceAddress}/delete/{id}")).StatusCode;
+
+        public HttpStatusCode Put(int id, string value) => PutAsync(id, value).Result;
+
+        public async Task<HttpStatusCode> PutAsync(int id, string value)
         {
-            throw new NotImplementedException();
-
-        }
-
-        public HttpStatusCode Delete(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public HttpStatusCode DeleteAsync(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        
-
-        public HttpStatusCode Put(int id, string value)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<HttpStatusCode> PutAsync(int id, string value)
-        {
-            throw new NotImplementedException();
+            var response = await _Client.PutAsJsonAsync($"{_ServiceAddress}/put/{id}", value);
+            return response.EnsureSuccessStatusCode().StatusCode;
         }
     }
 }

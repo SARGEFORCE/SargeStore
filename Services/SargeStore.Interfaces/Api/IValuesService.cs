@@ -25,6 +25,6 @@ namespace SargeStore.Interfaces.Api
 
         HttpStatusCode Delete(int id);
 
-        HttpStatusCode DeleteAsync(int id);
+        Task<HttpStatusCode> DeleteAsync(int id);
     }
 }

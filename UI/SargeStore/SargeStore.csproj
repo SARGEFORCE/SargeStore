@@ -34,6 +34,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Common\SargeStoreDomain\SargeStoreDomain.csproj" />
     <ProjectReference Include="..\..\Services\DataAccessLayer\DataAccessLayer.csproj" />
+    <ProjectReference Include="..\..\Services\SargeStore.Clients\SargeStore.Clients.csproj" />
     <ProjectReference Include="..\..\Services\SargeStore.Interfaces\SargeStore.Interfaces.csproj" />
     <ProjectReference Include="..\..\Services\SargeStore.Services\SargeStore.Services.csproj" />
   </ItemGroup>

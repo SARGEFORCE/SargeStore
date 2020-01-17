@@ -5,10 +5,12 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using SargeStore.Interfaces.Api;
 using SargeStore.Interfaces.Services;
 using SargeStore.Services.Database;
 using SargeStore.Services.FProduct;
 using SargeStoreDomain.Entities.Identity;
+using SargeStore.Clients.Values;
 using System;
 
 namespace SargeStore
@@ -29,6 +31,8 @@ namespace SargeStore
             services.AddScoped<IProductData, SqlProductData>();
             services.AddScoped<ICartService, CookieCartService>();
             services.AddScoped<IOrderService, SqlOrderService>();
+            services.AddTransient<IValuesService, ValuesClient>();
+
             services.AddIdentity<User, Role>()
                 .AddEntityFrameworkStores<SargeStoreDB>()
                 .AddDefaultTokenProviders();
