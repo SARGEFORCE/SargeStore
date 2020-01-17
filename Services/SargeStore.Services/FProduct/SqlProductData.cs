@@ -34,9 +34,5 @@ namespace SargeStore.Services.FProduct
             return query.AsEnumerable(); //query.ToArray();
         }
 
-        public Product GetProductById(int id) => _db.Products
-            .Include(p => p.Brand)
-            .Include(p => p.Section)
-            .FirstOrDefault(p => p.Id == id);
     }
 }
